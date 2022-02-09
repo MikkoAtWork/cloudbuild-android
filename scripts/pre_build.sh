@@ -12,7 +12,7 @@ rm ${CLI_TOOLS_ZIPFILE}
 
 # Android SDK licenses
 # https://developer.android.com/studio/command-line/sdkmanager.html
-yes | ${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses >/dev/null
+yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses >/dev/null
 
 # Android Platform Tools
 PACKAGES="platform-tools"
@@ -25,8 +25,8 @@ else
 fi
 
 # Installing all Android SDK Packages at once, in order to query the repository only once.
-echo "${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --install ${PACKAGES}"
-${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --install $PACKAGES
+echo "${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --install ${PACKAGES}"
+${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --install $PACKAGES
 
 
 # B) Change the version in gradle-wrapper.properties
